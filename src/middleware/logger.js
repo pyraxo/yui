@@ -8,7 +8,7 @@ module.exports = {
     logger.info(
       `${chalk.bold.magenta(
         !isPrivate
-        ? msg.guild.name
+        ? msg.channel.guild.name
         : '(in PMs)'
       )} > ${chalk.bold.green(msg.author.username)}: ` +
       `${chalk.bold.blue(msg.cleanContent.replace(/\n/g, ' '))}`
