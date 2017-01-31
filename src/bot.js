@@ -9,8 +9,9 @@ const { Client } = require('sylphy')
 
 const resolve = (str) => path.join('src', str)
 
+const processID = parseInt(process.env['PROCESS_ID'], 10)
 const processShards = parseInt(process.env['SHARDS_PER_PROCESS'], 10)
-const firstShardID = parseInt(process.env['PROCESS_ID'], 10) * processShards
+const firstShardID = processID * processShards
 const lastShardID = firstShardID + processShards - 1
 
 const logger = new (winston.Logger)({
@@ -18,7 +19,7 @@ const logger = new (winston.Logger)({
     new (winston.transports.Console)({
       level: 'silly',
       colorize: true,
-      label: processShards > 1 ? `C ${firstShardID}-${lastShardID}` : `C ${process.env['PROCESS_ID']}`,
+      label: processShards > 1 ? `C ${firstShardID}-${lastShardID}` : `C ${processID}`,
       timestamp: () => `[${chalk.grey(moment().format('HH:mm:ss'))}]`
     }),
     new (winston.transports.DailyRotateFile)({
@@ -33,7 +34,7 @@ const logger = new (winston.Logger)({
         : ''
         return `${timestamp} ${level.toUpperCase()} ${chalk.stripColor(message)} ${obj}`
       },
-      filename: path.join(process.cwd(), `logs/shard-${process.env['PROCESS_ID']}.log`),
+      filename: path.join(process.cwd(), `logs/shard-${processID}.log`),
     })
   ]
 })
@@ -46,7 +47,10 @@ const bot = new Client({
   locales: path.resolve('res', 'i18n'),
   messageLimit: 0,
   getAllUsers: true,
-  disableEveryone: true
+  disableEveryone: true,
+  maxShards: processID * parseInt(process.env['PROCESS_COUNT'], 10),
+  firstShardID,
+  lastShardID
 })
 
 bot.on('commander:registered', ({ trigger, group, aliases } = {}) =>

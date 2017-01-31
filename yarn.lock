@@ -93,9 +93,9 @@ options@>=0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/options/-/options-0.0.6.tgz#ec22d312806bb53e731773e7cdaefcf1c643128f"
 
-opusscript@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/opusscript/-/opusscript-0.0.1.tgz#c8f61d4301b2942ee9ddf68b075b3e373b7943dd"
+opusscript@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/opusscript/-/opusscript-0.0.2.tgz#5fdd7274c13991fd96f64320e69ad56f5b0b9bcd"
 
 "source-map-support@0.3.2 - 1.0.0":
   version "0.4.11"
@@ -121,9 +121,9 @@ supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
-sylphy:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/sylphy/-/sylphy-0.3.4.tgz#11dd6a80556d15c78b3c031c0c5b637314ed9e77"
+sylphy@^0.3.4:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/sylphy/-/sylphy-0.3.6.tgz#4ad4defe25b6eabade0a7b7820bf1e67476e8ac9"
   dependencies:
     eris "github:abalabahaha/eris#dev"
 
