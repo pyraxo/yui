@@ -5,6 +5,7 @@ const path = require('path')
 const chalk = require('chalk')
 const winston = require('winston')
 const moment = require('moment')
+const util = require('util')
 const { Client } = require('sylphy')
 
 const resolve = (str) => path.join('src', str)
@@ -43,12 +44,11 @@ const bot = new Client({
   token: process.env['CLIENT_TOKEN'],
   prefix: process.env['CLIENT_PREFIX'],
   modules: resolve('modules'),
-  ipc: resolve('ipc'),
   locales: path.resolve('res', 'i18n'),
   messageLimit: 0,
   getAllUsers: true,
   disableEveryone: true,
-  maxShards: processID * parseInt(process.env['PROCESS_COUNT'], 10),
+  maxShards: processShards * parseInt(process.env['PROCESS_COUNT'], 10),
   firstShardID,
   lastShardID
 })

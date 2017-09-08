@@ -37,7 +37,6 @@ const bot = new Client({
   token: process.env['CLIENT_TOKEN'],
   prefix: process.env['CLIENT_PREFIX'],
   modules: resolve('modules'),
-  ipc: resolve('ipc'),
   locales: path.resolve('res', 'i18n'),
   messageLimit: 0,
   getAllUsers: true,

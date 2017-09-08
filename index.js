@@ -10,7 +10,6 @@ require('dotenv-safe').config({
   allowEmptyValues: true
 })
 
-const isDebug = process.env.DEBUG_MODE === 'true'
 const isSelfbot = process.env.SELFBOT === 'true'
 
 if (isSelfbot) {
