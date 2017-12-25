@@ -6,7 +6,7 @@
 
 ## Installation
 ```bash
-$ git clone https://github.com/kukogei/yui
+$ git clone https://github.com/pyraxo/yui
 $ cd yui
 $ npm i
 $ npm start
