@@ -1,4 +1,4 @@
-![Yui](https://i.pyraxo.moe/SrLn7BtfmTrskj3tBTGEmKiVM3rHM8bl.gif)
+![Yui](https://i.pyraxo.moe/1h1yRfaU8aGzXX9V1PUgwp2G6l7VrePg.gif)
 
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kukogei/iris/master/LICENSE)
 
